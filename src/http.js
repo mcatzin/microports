@@ -1,13 +1,3 @@
-/**
- * EasyHTTP Library
- * Library for making HTTP requests
- *
- * @version 3.0.0
- * @author  Brad Traversy
- * @license MIT
- *
- **/
-
 class EasyHTTP {
   // Make an HTTP GET Request 
   async get(url) {
@@ -28,11 +18,11 @@ class EasyHTTP {
 
     const resData = await response.json();
     return resData;
-   
+
   }
 
-   // Make an HTTP PUT Request
-   async put(url, data) {
+  // Make an HTTP PUT Request
+  async put(url, data) {
     const response = await fetch(url, {
       method: 'PUT',
       headers: {
@@ -40,7 +30,7 @@ class EasyHTTP {
       },
       body: JSON.stringify(data)
     });
-    
+
     const resData = await response.json();
     return resData;
   }
@@ -58,8 +48,6 @@ class EasyHTTP {
     return resData;
   }
 
- }
+}
 
- export const http = new EasyHTTP();
-
- 
+export const http = new EasyHTTP();

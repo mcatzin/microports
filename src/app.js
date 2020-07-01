@@ -1,8 +1,12 @@
-// const person = require('./mymodule');
+import {
+    http
+} from './http';
 
+//Get 
+document.addEventListener("DOMContentLoaded", getPost)
 
-// console.log(person.name);
-//es2015 Module
-// import { person } from './mymodule'
-// import * as mod from './mymodule'
-import greeting from './mymodule'
+function getPost() {
+    http.get("http://localhost:3000/posts")
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+}
